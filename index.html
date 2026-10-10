@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SubjectPlug - Career Compass | Built in Klipgat</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui}
+body{background:#f8fafc;color:#0f172a}
+header{background:#0f172a;color:white;padding:20px;text-align:center}
+header h1{font-size:28px}
+header span{color:#22c55e}
+.badge{background:#22c55e;color:black;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:bold;margin-top:8px;display:inline-block}
+.container{max-width:500px;margin:20px auto;padding:0 15px}
+.card{background:white;border-radius:16px;padding:20px;box-shadow:0 4px 12px rgba(0,0,0,0.08);margin-bottom:16px}
+h2{font-size:18px;margin-bottom:12px}
+select,button{width:100%;padding:14px;border-radius:10px;border:1px solid #e2e8f0;margin:6px 0;font-size:15px}
+button{background:#0f172a;color:white;font-weight:bold;border:none}
+button:active{transform:scale(0.98)}
+.result{background:#f0fdf4;border:1px solid #22c55e;border-radius:12px;padding:15px;margin-top:12px;display:none}
+.tag{display:inline-block;background:#e2e8f0;padding:4px 8px;border-radius:6px;font-size:12px;margin:2px}
+footer{text-align:center;padding:20px;font-size:12px;color:#64748b}
+</style>
+</head>
+<body>
+<header>
+<h1>Subject<span>Plug</span></h1>
+<p>Career Compass for SA Learners</p>
+<div class="badge">✓ Built in Klipgat • Madibeng</div>
+</header>
+
+<div class="container">
+<div class="card">
+<h2>🎓 What subjects do you do?</h2>
+<select id="math"><option value="">Maths / Maths Lit / Tech Maths</option><option>Mathematics</option><option>Maths Literacy</option><option>Technical Mathematics</option></select>
+<select id="science"><option value="">Science / Other</option><option>Physical Sciences</option><option>Life Sciences</option><option>Geography</option><option>None</option></select>
+<select id="interest"><option value="">What do you love?</option><option>Helping People</option><option>Computers & Tech</option><option>Money & Business</option><option>Building Things</option><option>Art & Creativity</option></select>
+<button onclick="findCareer()">Find My Career Plug 🔌</button>
+<div id="result" class="result"></div>
+</div>
+
+<div class="card">
+<h2>🔥 Top Careers for Klipgat Learners</h2>
+<p><span class="tag">No University Needed</span> <span class="tag">TVET Friendly</span></p>
+<br>
+<p><b>1. IT Support / Software Dev</b> - Needs: Maths + Computers - Salary: R15k-R40k</p><br>
+<p><b>2. Electrician / Artisan</b> - Needs: Technical Maths + Physical Sciences - Salary: R12k-R35k</p><br>
+<p><b>3. Nursing / Clinical</b> - Needs: Life Sciences + Maths Lit - Salary: R18k-R45k</p><br>
+<p><b>4. Accounting / Banking</b> - Needs: Maths + Business - Salary: R14k-R50k</p>
+</div>
+</div>
+
+<footer>SubjectPlug v1.0 | Founder: Klipgat | Co-founder: Tech Team<br>© 2026 Built in Klipgat for SA</footer>
+
+<script>
+function findCareer(){
+const math=document.getElementById('math').value;
+const sci=document.getElementById('science').value;
+const interest=document.getElementById('interest').value;
+const res=document.getElementById('result');
+if(!math||!interest){res.style.display='block';res.innerHTML='⚠️ Please select your subjects first chief!';return;}
+let career="", uni="", salary="";
+if(interest=="Computers & Tech"){career="💻 Software Developer / IT Technician"; uni="TUT, UNISA, TVET IT Courses"; salary="R15k - R55k/month";}
+else if(interest=="Helping People"){career="🏥 Nurse / Teacher / Social Worker"; uni="SMU, UNW, Nursing Colleges"; salary="R18k - R45k/month";}
+else if(interest=="Money & Business"){career="💰 Accountant / Business Analyst"; uni="UNISA, NWU Mahikeng"; salary="R14k - R50k/month";}
+else if(interest=="Building Things"){career="⚡ Electrician / Engineer"; uni="Brits TVET, Orbit TVET"; salary="R12k - R40k/month";}
+else{career="🎨 Graphic Designer / Content Creator"; uni="Boston, TVET, Online"; salary="R10k - R35k/month";}
+res.style.display='block';
+res.innerHTML=`<b style="font-size:16px">${career}</b><br><br><b>Where to study:</b> ${uni}<br><b>Salary:</b> ${salary}<br><br><b>Your subjects:</b> ${math}, ${sci}<br><br><a href="https://wa.me/?text=I found my career on SubjectPlug - Built in Klipgat! ${career} Check it: " style="color:#22c55e;font-weight:bold">Share on WhatsApp →</a>`;
+}
+</script>
+</body>
+</html>
