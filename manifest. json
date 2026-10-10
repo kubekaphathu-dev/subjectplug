@@ -1,0 +1,14 @@
+{
+  "name": "SubjectPlug",
+  "short_name": "SubjectPlug",
+  "description": "Find careers using your school subjects. Built in Klipgat for SA learners.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0f172a",
+  "icons": [{
+    "src": "https://cdn-icons-png.flaticon.com/512/3135/3135755.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }]
+}
